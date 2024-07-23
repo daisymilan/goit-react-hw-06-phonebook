@@ -1,0 +1,30 @@
+.ulBox {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contactListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.contactAlign {
+  margin-left: 20px;
+}
+
+.btnDelete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btnDelete:hover {
+  background-color: #d32f2f;
+}
