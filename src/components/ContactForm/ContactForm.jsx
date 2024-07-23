@@ -4,21 +4,15 @@ import css from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const ContactForm = ({ addContact, contacts }) => {
+export const ContactForm = ({ addContact, contacts }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const handleNameChange = e => {
-    setName(e.target.value);
-  };
-
-  const handleNumberChange = e => {
-    setNumber(e.target.value);
-  };
+  const handleNameChange = e => setName(e.target.value);
+  const handleNumberChange = e => setNumber(e.target.value);
 
   const handleSubmit = e => {
     e.preventDefault();
-
     if (name.trim() === '' || number.trim() === '') {
       return;
     }
@@ -91,5 +85,3 @@ ContactForm.propTypes = {
     })
   ),
 };
-
-export default ContactForm;
