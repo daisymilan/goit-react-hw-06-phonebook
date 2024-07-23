@@ -3,7 +3,7 @@ import css from './ContactListItem.module.css';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const ContactListItem = ({ filteredContact, deleteContact }) => {
+export const ContactListItem = ({ filteredContact, deleteContact }) => {
   const handleDelete = () => {
     deleteContact(filteredContact.id);
     Notify.success(
@@ -27,5 +27,3 @@ ContactListItem.propTypes = {
   filteredContact: PropTypes.object.isRequired,
   deleteContact: PropTypes.func.isRequired,
 };
-
-export default ContactListItem;
