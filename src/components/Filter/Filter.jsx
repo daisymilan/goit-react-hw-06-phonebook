@@ -2,10 +2,8 @@ import React from 'react';
 import css from './Filter.module.css';
 import PropTypes from 'prop-types';
 
-const Filter = ({ filter, setFilter }) => {
-  const handleFilterChange = e => {
-    setFilter(e.target.value);
-  };
+export const Filter = ({ filter, setFilter }) => {
+  const handleFilterChange = e => setFilter(e.target.value);
 
   return (
     <div className={css.divFilter}>
@@ -25,5 +23,3 @@ Filter.propTypes = {
   filter: PropTypes.string.isRequired,
   setFilter: PropTypes.func.isRequired,
 };
-
-export default Filter;
