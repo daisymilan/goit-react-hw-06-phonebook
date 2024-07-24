@@ -24,6 +24,10 @@ export const ContactListItem = ({ filteredContact, deleteContact }) => {
 };
 
 ContactListItem.propTypes = {
-  filteredContact: PropTypes.object.isRequired,
+  filteredContact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
   deleteContact: PropTypes.func.isRequired,
 };

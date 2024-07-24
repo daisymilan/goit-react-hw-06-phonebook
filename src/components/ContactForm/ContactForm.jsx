@@ -8,11 +8,17 @@ export const ContactForm = ({ addContact, contacts }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const handleNameChange = e => setName(e.target.value);
-  const handleNumberChange = e => setNumber(e.target.value);
+  const handleNameChange = e => {
+    setName(e.target.value);
+  };
+
+  const handleNumberChange = e => {
+    setNumber(e.target.value);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
+
     if (name.trim() === '' || number.trim() === '') {
       return;
     }
@@ -48,14 +54,13 @@ export const ContactForm = ({ addContact, contacts }) => {
         <input
           type="text"
           name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="^[a-zA-Za-яА-Я]+(([' \-][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan."
           required
           value={name}
           onChange={handleNameChange}
         />
       </label>
-
       <label className={css.formField}>
         <p className={css.formLabel}>Number</p>
         <input
